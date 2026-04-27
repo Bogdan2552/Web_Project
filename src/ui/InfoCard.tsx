@@ -1,0 +1,1 @@
+export function InfoCard({title,value,subtitle}:{title:string;value:string|number;subtitle?:string}){ return <div className="panel metric-card"><small>{title}</small><strong>{value}</strong>{subtitle&&<span>{subtitle}</span>}</div>; }

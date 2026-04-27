@@ -1,0 +1,7 @@
+export type Role = 'user' | 'admin';
+export interface AuthUser { id: number; name: string; email: string; role: Role; token?: string; }
+export interface LocationItem { id: number; name: string; city: string; address: string; description: string; rating: number; hasFreeParking: boolean; hasWellnessCenter: boolean; imageUrl: string; roomCount?: number; }
+export interface RoomItem { id: number; name: string; type: string; capacity: number; pricePerNight: number; description: string; imageUrl?: string; location: { id: number; name: string; city: string; address: string; rating: number; hasFreeParking: boolean; hasWellnessCenter: boolean; }; }
+export interface ReservationItem { id: number; checkIn: string; checkOut: string; guests: number; status: 'active'|'cancelled'; roomName: string; roomType: string; locationName: string; locationCity: string; guestName?: string; guestEmail?: string; }
+export interface SearchState { checkIn: string; checkOut: string; guests: number; search: string; city: string; rating: string; freeParking: boolean; wellnessCenter: boolean; }
+export interface DashboardPayload { summary: { totalReservations: number; activeReservations: number; cancelledReservations: number; totalUsers: number; totalLocations: number; totalRooms?: number; }; reservationsByMonth: Array<{ month: string; count: number }>; reservationsByLocation: Array<{ name: string; count: number }>; reservationsByStatus: Array<{ status: string; count: number }>; }

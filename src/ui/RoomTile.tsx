@@ -1,0 +1,2 @@
+import type { RoomItem } from '../types/domain';
+export function RoomTile({room,onReserve,disabled}:{room:RoomItem;onReserve:(room:RoomItem)=>void;disabled?:boolean}){ return <article className="panel room-tile"><div><h3>{room.name}</h3><p>{room.location.name} · {room.location.city}</p><p>{room.type} · Capacity: {room.capacity}</p><p>{room.description}</p></div><div className="room-meta"><strong>€{room.pricePerNight}</strong><button className="button-link" onClick={()=>onReserve(room)} disabled={disabled}>Reserve</button></div></article>; }
